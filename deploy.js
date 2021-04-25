@@ -1,14 +1,8 @@
-//cinnamon-session-quit
-
 var fs = require('fs');
 
 const scriptTemplate = `
-export JAVA_HOME="$HOME/java_versions/jdk$N$/bin"
-export PATH=$PATH:$JAVA_HOME
-
-# uncomment whatever you need:
-cinnamon-session-quit 
-#gnome-session-quit
+export JAVA_HOME="$HOME/java_versions/jdk$N$"
+export PATH=$JAVA_HOME/bin:$PATH
 `;
 
 const javaMin = 7;
@@ -49,7 +43,7 @@ var htmlTemplate = `
 }
 </style>
 <body>
-<h3>Put this into your ~/.profile file:</h3>
+<h3>Put this into the end of your ~/.bashrc file then reboot:</h3>
 </br>
 <p class="border" style="white-space: pre-wrap">$ALIASES$</p>
 </body>
